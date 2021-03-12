@@ -7,6 +7,7 @@ import SubmitSuccess from '../screens/SubmitSuccess';
 import Welcome from '../screens/Welcome';
 import Login from '../screens/Login';
 import Home from '../screens/Home';
+import MovieDetail from '../screens/MovieDetail';
 
 const Stack = createStackNavigator();
 
@@ -50,6 +51,12 @@ const Router = () => {
                 component={Home}
                 options={{headerShown: false}}
             />
+            <Stack.Screen
+                name="MovieDetail"
+                component={MovieDetail}
+                options={{headerShown: false}}
+            />
+            
         </Stack.Navigator>
     )
 }
