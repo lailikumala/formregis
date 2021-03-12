@@ -129,7 +129,7 @@ const style = StyleSheet.create({
     info: {
         color: '#FF7314',
         fontWeight: 'bold',
-        fontSize: 17,
+        fontSize: 25,
         marginLeft: 30
     },
     label: {

@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text, ScrollView } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
-import {  Gap, InputText } from '../../component';
+import { StyleSheet, View, Text } from 'react-native';
+import { Gap } from '../../component';
 
 const SubmitSuccess = ({navigation}) => {
     return (

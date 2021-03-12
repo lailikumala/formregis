@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "formregis-tvOS.app"
-               BlueprintName = "formregis-tvOS"
-               ReferencedContainer = "container:formregis.xcodeproj">
+               BuildableName = "movieDB-tvOS.app"
+               BlueprintName = "movieDB-tvOS"
+               ReferencedContainer = "container:movieDB.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "formregis-tvOSTests.xctest"
-               BlueprintName = "formregis-tvOSTests"
-               ReferencedContainer = "container:formregis.xcodeproj">
+               BuildableName = "movieDB-tvOSTests.xctest"
+               BlueprintName = "movieDB-tvOSTests"
+               ReferencedContainer = "container:movieDB.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "formregis-tvOS.app"
-            BlueprintName = "formregis-tvOS"
-            ReferencedContainer = "container:formregis.xcodeproj">
+            BuildableName = "movieDB-tvOS.app"
+            BlueprintName = "movieDB-tvOS"
+            ReferencedContainer = "container:movieDB.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "formregis-tvOS.app"
-            BlueprintName = "formregis-tvOS"
-            ReferencedContainer = "container:formregis.xcodeproj">
+            BuildableName = "movieDB-tvOS.app"
+            BlueprintName = "movieDB-tvOS"
+            ReferencedContainer = "container:movieDB.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
