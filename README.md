@@ -24,7 +24,7 @@ moviedb is a streaming media service provider application built with React Nativ
   <img src="https://user-images.githubusercontent.com/66887616/111015117-1ce60a80-835c-11eb-9782-84938d9560d6.png" width="150">
   
   ## Movie Detail
-  <img src="https://user-images.githubusercontent.com/66887616/111015125-20799180-835c-11eb-92a9-8b9e12096dd4" width="150">
+  <img src="https://user-images.githubusercontent.com/66887616/111015125-20799180-835c-11eb-92a9-8b9e12096dd4.png" width="150">
   
   
  
