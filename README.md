@@ -1,5 +1,5 @@
-# Formregis
-Themoviedb admin registration with "Form multiple steps".
+# movieDB
+moviedb is a streaming media service provider application built with React Native.
 
 # Screens
   ## Information A
