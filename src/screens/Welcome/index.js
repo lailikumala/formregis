@@ -3,25 +3,25 @@ import {View, Text, Image, Dimensions, StatusBar, StyleSheet} from 'react-native
 import { ScrollView } from 'react-native-gesture-handler';
 import {Button} from 'react-native-paper';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
-import { img1, img2 } from '../../assets';
+import { img1, img2, img3, img4 } from '../../assets';
 const {width: screenWidth} = Dimensions.get('window');
 
 const ENTRIES1 = [
   {
-    title: 'One Piece',
-    image: img1
+    title: 'Outside The Wire',
+    image: img3
   },
   {
-    title: 'Yakusoku No Neverland',
+    title: 'Black Water (Abyss)',
     image: img2,
   },
   {
-    title: 'One Piece',
+    title: 'Birds Of Prey',
     image: img1,
   },
   {
-    title: 'Yakusoku No Neverland',
-    image: img2
+    title: 'One Piece',
+    image: img4
   },
 ];
 

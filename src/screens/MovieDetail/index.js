@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, Image, TouchableOpacity, Dimensions } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import { Gap } from '../../component';
 import { key, URI, URIImage } from '../../utils';
@@ -41,51 +41,31 @@ const MovieDetail = ({navigation, route}) => {
 
 
     return (
-        <View>
-            <Text>detai ini</Text>
-            <Image 
+        <View style={style.bg}>
+            <View>
+                <Image 
                 source={{uri: `${URIImage}/${movieDetail.poster_path}`}}
-                style={{height: 150, width: 143, marginTop: 0}}/>
+                style={style.img}/>
+            </View>
+            <Gap height={15}/>
+            <Text style={style.title}>{movieDetail.title}</Text>
+            <Gap height={15}/>
+            <Text style={style.date}>Release date: {movieDetail.release_date}</Text>
+            <Gap height={14}/>
+            <View>
+                <Text style={style.overview}>Overview</Text>
+                <Text style={style.overviewMovie}>{movieDetail.overview}</Text>
+            </View>
             <Gap height={20}/>
-            <Text>{movieDetail.title}</Text>
-            <Gap height={20}/>
-            <Text>{movieDetail.release_date}</Text>
-            <Gap height={20}/>
-            <Text>{movieDetail.overview}</Text>
-            <Gap height={30}/>
-            <TouchableOpacity>
-                <Text>{movieDetail.homepage}</Text>
-            </TouchableOpacity>
-            <WebView
-            source={{uri: `${movieDetail.homepage}`}}
-            style={{marginTop: 20, width: '100%', height: 200}}/>
-            <WebView
-            />
-           
-
-           <View style={{
-           flex:1,
-        
-        }}>
-           <View style={{
-               width:"97%",
-               height:200,
-               marginLeft: 5,
-               marginRight: 5
-           }}>
-              <WebView
-              javaScriptEnabled={true}
-              domStorageEnabled={true}
-               source={{uri:`${movieDetail.homepage}`}}
-              />
-
-           </View>
-         
-           <View
-             style={{borderBottomWidth:1}}
-           />
-       </View>
-
+            <View style={style.webviewWrapper}>
+                <View style={style.webview}>
+                    <WebView
+                    javaScriptEnabled={true}
+                    domStorageEnabled={true}
+                    source={{uri:`${movieDetail.homepage}`}}
+                    />
+                </View>
+            </View>
         </View>
     )
 }
@@ -93,6 +73,45 @@ const MovieDetail = ({navigation, route}) => {
 export default MovieDetail;
 
 const style = StyleSheet.create({
-    
-    
+    bg: {
+        backgroundColor: '#22211F', 
+        width: '100%', 
+        height: '100%'
+    },
+    img: {
+        alignSelf: 'center',  
+        height: 230, 
+        width: '100%', 
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
+        marginBottom: 'auto',
+    },
+    title: {
+        color: '#FF7314', 
+        fontWeight: 'bold', 
+        fontSize: 30, 
+        marginLeft: 30
+    },
+    date: {
+        color: '#f4f4f4', 
+        marginLeft: 15
+    },
+    overview: {
+        color: '#f4f4f4', 
+        marginLeft: 15, 
+        fontSize: 18, 
+        marginBottom: 8
+    },
+    overviewMovie: {
+        color: '#f4f4f4', 
+        marginLeft: 15, 
+        marginRight: 10
+    },
+    webviewWrapper: {flex:1},
+    webview: {
+        width:'97%',
+        height:200, 
+        marginLeft: 5, 
+        marginRight: 5
+    }
   });

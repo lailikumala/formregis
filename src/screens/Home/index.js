@@ -1,17 +1,15 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity, ScrollView, FlatList } from 'react-native';
-import { Gap } from '../../component';
-import { img1, img2 } from '../../assets';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faPlus, faPlay } from '@fortawesome/free-solid-svg-icons';
-import Axios from 'axios';
+import { StyleSheet, View, Text, Image, TouchableOpacity, FlatList } from 'react-native';
+import { img1 } from '../../assets';
 import AsyncStorage from '@react-native-community/async-storage';
 import { key, URI, URIImage } from '../../utils';
+
 
 const Home = ({navigation}) => {
 
     const [movie, setMovie] = React.useState(null)
     const [id, setId] = React.useState(null)
+    const numColumns = 2
 
     React.useEffect(() => {
         function get() {
@@ -20,7 +18,7 @@ const Home = ({navigation}) => {
             .then(json => {
                 let result = json.results
                 setMovie(result)
-                // console.log('data search: ', result)
+               
             })
             .catch(function(error) {
             console.log(error);
@@ -29,12 +27,11 @@ const Home = ({navigation}) => {
             get()
     }, [])
 
-    const renderItem = ({item, index}) => {
+    const renderItem = ({item}) => {
         return (
-            <View style={style.cardMovie}
-            >
-                <TouchableOpacity style={style.card}
-                onPress={() => { 
+            <View style={style.cards}>
+                <TouchableOpacity
+                    onPress={() => { 
                     navigation.navigate('MovieDetail', {id: item.id}) 
                     async () => {
                     try { await AsyncStorage.setItem('id', id) }
@@ -43,11 +40,10 @@ const Home = ({navigation}) => {
                 }}>
                     <Image 
                     source={{uri: `${URIImage}/${item.poster_path}`}}
-                    style={{height: 150, width: 143, marginTop: 0}}/>
-                    <Text style={{color: '#fff', fontSize: 14, marginBottom: 10, display: 'flex', justifyContent: 'center', alignSelf: 'center', fontWeight: 'bold', marginTop: 5}}>{item.title}</Text>  
+                    style={style.imgCard}/>
+                    <Text style={style.title}>{item.title}</Text>  
                 </TouchableOpacity>
-                
-            </View>
+            </View>     
         )
     }
 
@@ -58,11 +54,16 @@ const Home = ({navigation}) => {
                     style={style.img}
                     source={img1}
                 />
+                <View>
+                    <Text style={style.popular}>Popular</Text>
+                </View>
+                
                 <FlatList
-                    showsVerticalScrollIndicator={false}
                     data={movie}
                     renderItem={renderItem}
-                    />
+                   numColumns={numColumns}
+                />
+                
                 
             </View>
             
@@ -86,17 +87,33 @@ const style = StyleSheet.create({
         marginTop: 0,
         marginBottom: 'auto'
     },
-    cardMovie: {
-        marginTop: 30,
-
-       
-        
+    cards: {
+        marginTop: 30, 
+        width: '40%', 
+        backgroundColor: '#393534', 
+        marginLeft: 24
     },
-    card: {
-        width: `40%`,
-        backgroundColor: '#393534',
-        display: 'flex',
-        flexWrap: 'wrap'
-    } 
+   popular: {
+       fontSize: 20,
+       color: '#f4f4f4',
+       fontWeight: 'bold',
+       marginTop: 20,
+       marginLeft: 30
+   },
+   imgCard: {
+       height: 150, 
+       width: '100%', 
+       marginTop: 0
+    },
+    title: {
+        color: '#fff', 
+        fontSize: 14, 
+        marginBottom: 10, 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignSelf: 'center', 
+        fontWeight: 'bold', 
+        marginTop: 5
+    }
     
   });
